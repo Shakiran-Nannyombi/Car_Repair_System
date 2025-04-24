@@ -15,3 +15,18 @@ Route::get('/register', [RoleSelectionController::class, 'show'])->name('registe
 // Unified login
 Route::get('/login', [UnifiedLoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
 Route::post('/login', [UnifiedLoginController::class, 'login'])->middleware('guest');
+
+//Contact 
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+//About
+Route::get('/about', function () {
+    return view('about');
+});
+
+//Services
+Route::get('/services', function () {
+    return view('services');
+}); 

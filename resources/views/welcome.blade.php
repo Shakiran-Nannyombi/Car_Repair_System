@@ -2,177 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vehicle Repair System</title>
+    <title>Car Repair System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-            height: 100%;
-            background-color: #f8f9fa;
-        }
-
-        nav {
-            background-color: #e83e8c; /* Pink background for the navbar */
-            display: flex;
-            align-items: center;
-            padding: 20px 60px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        nav .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        nav .nav-group {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 10px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a.btn {
-            font-weight: 500;
-        }
-
-        nav .auth-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .hero {
-            margin-top: 100px;
-            height: 65vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            position: relative;
-            transition: background-image 1s ease-in-out;
-        }
-
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            border-radius: 10px;
-        }
-
-        .overlay h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .overlay p {
-            font-size: 1.2rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #f5f5f5;
-            margin-top: 40px;
-        }
-
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .gallery-item {
-            width: 300px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav .nav-group {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            nav .auth-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            nav ul li a.btn,
-            nav .auth-buttons a.btn {
-                width: 100%;
-            }
-            
-            .gallery-item {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
 <body>
 
     <nav>
-        <div class="logo">Vehicle Repair System</div>
+        <div class="logo">CAR REPAIR SYSTEM</div>
         <div class="nav-group">
             <ul class="navbar-nav flex-row">
                 <li class="nav-item"><a class="btn btn-outline-light" href="{{ url('/') }}">Home</a></li>
                 <li class="nav-item"><a class="btn btn-outline-light" href="{{ url('/about') }}">About</a></li>
                 <li class="nav-item"><a class="btn btn-outline-light" href="{{ url('/services') }}">Services</a></li>
-                <a class="btn btn-outline-light" href="{{ route('contact') }}">Contact Us</a>
+                <li  class="nav-item"><a class="btn btn-outline-light" href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
             <div class="auth-buttons">
                 <a href="{{ url('/login') }}" class="btn btn-primary">Login</a>
@@ -219,11 +66,11 @@
     <script>
         const hero = document.getElementById('hero');
         const images = [
+             "{{ asset('images/O.jpeg') }}",
             "{{ asset('images/back1.jpg') }}",
             "{{ asset('images/back2.jpg') }}",
             "{{ asset('images/back3.jpg') }}",
-            "{{ asset('images/back4.jpg') }}",
-            "{{ asset('images/O.jpeg') }}"
+             "{{ asset('images/O.jpeg') }}"
         ];
         let index = 0;
 
