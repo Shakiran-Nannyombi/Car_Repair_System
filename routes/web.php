@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\RoleSelectionController;
 use App\Http\Controllers\Auth\UnifiedLoginController;
+use App\Http\Controllers\ContactController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::post('/login', [UnifiedLoginController::class, 'login'])->middleware('gue
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
 
 //About
 Route::get('/about', function () {
@@ -29,4 +31,4 @@ Route::get('/about', function () {
 //Services
 Route::get('/services', function () {
     return view('services');
-}); 
+});

@@ -5,76 +5,7 @@
     <title>Our Services - Vehicle Repair System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        section {
-            padding: 40px;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        h2 {
-            color: #007bff;
-        }
-
-        h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-            text-align: left;
-            display: inline-block;
-        }
-
-        .images-row {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .images-row img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .car-item {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .car-item p {
-            font-weight: bold;
-            color: #28a745;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/services.css') }}">
 </head>
 <body>
 
@@ -187,7 +118,7 @@
     </section>
 
     <footer>
-        &copy; {{ date('Y') }} Vehicle Repair System. All rights reserved.
+        &copy; {{ date('Y') }} Car Repair System. All rights reserved.
     </footer>
 
 </body>

@@ -8,50 +8,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        .header-bg {
-            background: linear-gradient(135deg, #0d6efd, #5a8dee);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .img-fluid {
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .section-title {
-            margin-bottom: 40px;
-            color: #0d6efd;
-        }
-
-        .feature-box {
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .feature-box:hover {
-            background-color: #e9ecef;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0d6efd;
-            color: white;
-            margin-top: 60px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 </head>
 <body>
 
 <!-- Header -->
 <div class="header-bg">
-    <h1>About Vehicle Repair System</h1>
+    <h1>About Car Repair System</h1>
     <p class="lead mt-3">Reliable, fast and trusted solutions for all your vehicle repair needs</p>
 </div>
 
@@ -103,7 +66,7 @@
 
 <!-- Footer -->
 <footer>
-    &copy; {{ date('Y') }} Vehicle Repair System. All rights reserved.
+    &copy; {{ date('Y') }} Car Repair System. All rights reserved.
 </footer>
 
 <!-- Bootstrap JS -->
