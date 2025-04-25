@@ -7,79 +7,139 @@
 
     <!-- ✅ Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
 
-    <div class="container mt-5">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e7b754 0%, #fbf7ef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #d0a039;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-header img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .form-label {
+            color: #6f5315;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #d0a039;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #b38a2e;
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card shadow border-primary">
-                    <div class="card-header bg-primary text-white">
+                <div class="card">
+                    <!-- Card Header with Logo -->
+                    <div class="card-header">
+                        <img src="{{ asset('images/logo.png') }}" alt="Logo">
                         <h4 class="mb-0">Client Registration</h4>
                     </div>
-                    <div class="card-body">
 
+                    <!-- Card Body -->
+                    <div class="card-body">
                         <form method="POST" action="{{ route('register.client') }}" enctype="multipart/form-data">
                             @csrf
 
+                            <!-- Name -->
                             <div class="mb-3">
-                                <x-input-label for="name" value="Name" class="form-label" />
-                                <x-text-input name="name" value="{{ old('name') }}" required autofocus class="form-control" />
+                                <label for="name" class="form-label">Name</label>
+                                <input id="name" name="name" value="{{ old('name') }}" required autofocus class="form-control" />
                             </div>
 
+                            <!-- Email -->
                             <div class="mb-3">
-                                <x-input-label for="email" value="Email" class="form-label" />
-                                <x-text-input name="email" value="{{ old('email') }}" type="email" required class="form-control" />
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" name="email" value="{{ old('email') }}" type="email" required class="form-control" />
                             </div>
 
+                            <!-- Password -->
                             <div class="mb-3">
-                                <x-input-label for="password" value="Password" class="form-label" />
-                                <x-text-input name="password" type="password" required class="form-control" />
+                                <label for="password" class="form-label">Password</label>
+                                <input id="password" name="password" type="password" required class="form-control" />
                             </div>
 
+                            <!-- Confirm Password -->
                             <div class="mb-3">
-                                <x-input-label for="password_confirmation" value="Confirm Password" class="form-label" />
-                                <x-text-input name="password_confirmation" type="password" required class="form-control" />
+                                <label for="password_confirmation" class="form-label">Confirm Password</label>
+                                <input id="password_confirmation" name="password_confirmation" type="password" required class="form-control" />
                             </div>
 
+                            <!-- Vehicle Type -->
                             <div class="mb-3">
-                                <x-input-label for="vehicle_type" value="Vehicle Type" class="form-label" />
-                                <x-text-input name="vehicle_type" required class="form-control" />
+                                <label for="vehicle_type" class="form-label">Vehicle Type</label>
+                                <input id="vehicle_type" name="vehicle_type" required class="form-control" />
                             </div>
 
+                            <!-- Vehicle Registration Number -->
                             <div class="mb-3">
-                                <x-input-label for="vehicle_registration_number" value="Vehicle Registration Number" class="form-label" />
-                                <x-text-input name="vehicle_registration_number" required class="form-control" />
+                                <label for="vehicle_registration_number" class="form-label">Vehicle Registration Number</label>
+                                <input id="vehicle_registration_number" name="vehicle_registration_number" required class="form-control" />
                             </div>
 
+                            <!-- Gender -->
                             <div class="mb-3">
-                                <x-input-label for="gender" value="Gender" class="form-label" />
-                                <select name="gender" required class="form-select">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select id="gender" name="gender" required class="form-select">
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
                             </div>
 
+                            <!-- Profile Image -->
                             <div class="mb-3">
-                                <x-input-label for="image" value="Profile Image" class="form-label" />
-                                <input type="file" name="image" accept="image/*" class="form-control" />
+                                <label for="image" class="form-label">Profile Image</label>
+                                <input id="image" type="file" name="image" accept="image/*" class="form-control" />
                             </div>
 
+                            <!-- Location -->
                             <div class="mb-3">
-                                <x-input-label for="location" value="Location" class="form-label" />
-                                <x-text-input name="location" required class="form-control" />
+                                <label for="location" class="form-label">Location</label>
+                                <input id="location" name="location" required class="form-control" />
                             </div>
 
+                            <!-- Register Button -->
                             <div class="text-end">
-                                <x-primary-button class="btn btn-primary mt-3">Register</x-primary-button>
+                                <button type="submit" class="btn btn-primary mt-3">Register</button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 </html>
